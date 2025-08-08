@@ -76,7 +76,7 @@ export default function App() {
 
   return (
     <div className="main">
-      <h1>Tool Library Memberships</h1>
+      <h1>CHTL Membership Renewals</h1>
       <p>
         <i>Data as of {todayDate.toLocaleString()}</i>
       </p>
