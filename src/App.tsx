@@ -29,23 +29,23 @@ const COLORS: {
 }[] = [
   {
     dataKey: "Flexible",
-    color: "#FF5C18",
+    color: "#0074D9", // Strong blue
   },
   {
     dataKey: "Standard (Annual)",
-    color: "#23FF5D",
+    color: "#2ECC40", // Vivid green
   },
   {
     dataKey: "Standard (Monthly)",
-    color: "#3D5EFE",
+    color: "#FF4136", // Bright red
   },
   {
     dataKey: "Sustaining (Annual)",
-    color: "#F315FE",
+    color: "#B10DC9", // Deep purple
   },
   {
     dataKey: "regular",
-    color: "#FFBC17",
+    color: "#FF851B", // Orange
   },
 ];
 
