@@ -27,6 +27,13 @@ const TYPE_FILTER = [
 const host = "capitolhill.myturn.com";
 
 const today = new Date();
+
+// Save today's date in a JSON file for reference
+fs.writeFileSync(
+  "./src/today.json",
+  JSON.stringify({ today: today.toISOString() }, null, 4)
+);
+
 const sixtyDaysAgo = new Date(today.getTime() - 60 * 24 * 60 * 60 * 1000);
 
 const formatDate = (date: Date): string => {

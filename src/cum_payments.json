@@ -1,14 +1,6 @@
 [
     {
-        "date": 1749254400000,
-        "Flexible": 0,
-        "Standard (Monthly)": 0,
-        "Standard (Annual)": 0,
-        "Sustaining (Annual)": 0,
-        "regular": 0
-    },
-    {
-        "date": 1749340800000,
+        "date": 1749366000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -16,7 +8,7 @@
         "regular": 100
     },
     {
-        "date": 1749427200000,
+        "date": 1749452400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -24,7 +16,7 @@
         "regular": 100
     },
     {
-        "date": 1749513600000,
+        "date": 1749538800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -32,7 +24,7 @@
         "regular": 100
     },
     {
-        "date": 1749600000000,
+        "date": 1749625200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -40,7 +32,7 @@
         "regular": 110
     },
     {
-        "date": 1749686400000,
+        "date": 1749711600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -48,7 +40,7 @@
         "regular": 110
     },
     {
-        "date": 1749772800000,
+        "date": 1749798000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -56,7 +48,7 @@
         "regular": 110
     },
     {
-        "date": 1749859200000,
+        "date": 1749884400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -64,7 +56,7 @@
         "regular": 110
     },
     {
-        "date": 1749945600000,
+        "date": 1749970800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -72,7 +64,7 @@
         "regular": 110
     },
     {
-        "date": 1750032000000,
+        "date": 1750057200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -80,7 +72,7 @@
         "regular": 110
     },
     {
-        "date": 1750118400000,
+        "date": 1750143600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -88,7 +80,7 @@
         "regular": 110
     },
     {
-        "date": 1750204800000,
+        "date": 1750230000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -96,7 +88,7 @@
         "regular": 135
     },
     {
-        "date": 1750291200000,
+        "date": 1750316400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -104,7 +96,7 @@
         "regular": 180
     },
     {
-        "date": 1750377600000,
+        "date": 1750402800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -112,7 +104,7 @@
         "regular": 180
     },
     {
-        "date": 1750464000000,
+        "date": 1750489200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -120,7 +112,7 @@
         "regular": 190
     },
     {
-        "date": 1750550400000,
+        "date": 1750575600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -128,7 +120,7 @@
         "regular": 225
     },
     {
-        "date": 1750636800000,
+        "date": 1750662000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -136,7 +128,7 @@
         "regular": 225
     },
     {
-        "date": 1750723200000,
+        "date": 1750748400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -144,7 +136,7 @@
         "regular": 245
     },
     {
-        "date": 1750809600000,
+        "date": 1750834800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -152,7 +144,7 @@
         "regular": 245
     },
     {
-        "date": 1750896000000,
+        "date": 1750921200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -160,7 +152,7 @@
         "regular": 245
     },
     {
-        "date": 1750982400000,
+        "date": 1751007600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -168,7 +160,7 @@
         "regular": 245
     },
     {
-        "date": 1751068800000,
+        "date": 1751094000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -176,7 +168,7 @@
         "regular": 505
     },
     {
-        "date": 1751155200000,
+        "date": 1751180400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -184,7 +176,7 @@
         "regular": 505
     },
     {
-        "date": 1751241600000,
+        "date": 1751266800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -192,7 +184,7 @@
         "regular": 505
     },
     {
-        "date": 1751328000000,
+        "date": 1751353200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -200,7 +192,7 @@
         "regular": 505
     },
     {
-        "date": 1751414400000,
+        "date": 1751439600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -208,7 +200,7 @@
         "regular": 505
     },
     {
-        "date": 1751500800000,
+        "date": 1751526000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -216,7 +208,7 @@
         "regular": 555
     },
     {
-        "date": 1751587200000,
+        "date": 1751612400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -224,7 +216,7 @@
         "regular": 555
     },
     {
-        "date": 1751673600000,
+        "date": 1751698800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -232,7 +224,7 @@
         "regular": 555
     },
     {
-        "date": 1751760000000,
+        "date": 1751785200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -240,7 +232,7 @@
         "regular": 555
     },
     {
-        "date": 1751846400000,
+        "date": 1751871600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -248,7 +240,7 @@
         "regular": 575
     },
     {
-        "date": 1751932800000,
+        "date": 1751958000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -256,7 +248,7 @@
         "regular": 575
     },
     {
-        "date": 1752019200000,
+        "date": 1752044400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -264,7 +256,7 @@
         "regular": 635
     },
     {
-        "date": 1752105600000,
+        "date": 1752130800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -272,7 +264,7 @@
         "regular": 635
     },
     {
-        "date": 1752192000000,
+        "date": 1752217200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -280,7 +272,7 @@
         "regular": 635
     },
     {
-        "date": 1752278400000,
+        "date": 1752303600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -288,7 +280,7 @@
         "regular": 635
     },
     {
-        "date": 1752364800000,
+        "date": 1752390000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -296,7 +288,7 @@
         "regular": 675
     },
     {
-        "date": 1752451200000,
+        "date": 1752476400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -304,7 +296,7 @@
         "regular": 675
     },
     {
-        "date": 1752537600000,
+        "date": 1752562800000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -312,7 +304,7 @@
         "regular": 675
     },
     {
-        "date": 1752624000000,
+        "date": 1752649200000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -320,7 +312,7 @@
         "regular": 675
     },
     {
-        "date": 1752710400000,
+        "date": 1752735600000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -328,7 +320,7 @@
         "regular": 705
     },
     {
-        "date": 1752796800000,
+        "date": 1752822000000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -336,7 +328,7 @@
         "regular": 705
     },
     {
-        "date": 1752883200000,
+        "date": 1752908400000,
         "Flexible": 0,
         "Standard (Monthly)": 0,
         "Standard (Annual)": 0,
@@ -344,7 +336,7 @@
         "regular": 810
     },
     {
-        "date": 1752969600000,
+        "date": 1752994800000,
         "Flexible": 25,
         "Standard (Monthly)": 15,
         "Standard (Annual)": 140,
@@ -352,7 +344,7 @@
         "regular": 830
     },
     {
-        "date": 1753056000000,
+        "date": 1753081200000,
         "Flexible": 49,
         "Standard (Monthly)": 25,
         "Standard (Annual)": 175,
@@ -360,7 +352,7 @@
         "regular": 830
     },
     {
-        "date": 1753142400000,
+        "date": 1753167600000,
         "Flexible": 49,
         "Standard (Monthly)": 30,
         "Standard (Annual)": 210,
@@ -368,7 +360,7 @@
         "regular": 830
     },
     {
-        "date": 1753228800000,
+        "date": 1753254000000,
         "Flexible": 61,
         "Standard (Monthly)": 30,
         "Standard (Annual)": 245,
@@ -376,7 +368,7 @@
         "regular": 830
     },
     {
-        "date": 1753315200000,
+        "date": 1753340400000,
         "Flexible": 81,
         "Standard (Monthly)": 30,
         "Standard (Annual)": 245,
@@ -384,7 +376,7 @@
         "regular": 830
     },
     {
-        "date": 1753401600000,
+        "date": 1753426800000,
         "Flexible": 93,
         "Standard (Monthly)": 35,
         "Standard (Annual)": 280,
@@ -392,7 +384,7 @@
         "regular": 830
     },
     {
-        "date": 1753488000000,
+        "date": 1753513200000,
         "Flexible": 105,
         "Standard (Monthly)": 45,
         "Standard (Annual)": 280,
@@ -400,7 +392,7 @@
         "regular": 830
     },
     {
-        "date": 1753574400000,
+        "date": 1753599600000,
         "Flexible": 115,
         "Standard (Monthly)": 70,
         "Standard (Annual)": 315,
@@ -408,7 +400,7 @@
         "regular": 830
     },
     {
-        "date": 1753660800000,
+        "date": 1753686000000,
         "Flexible": 165,
         "Standard (Monthly)": 85,
         "Standard (Annual)": 315,
@@ -416,7 +408,7 @@
         "regular": 830
     },
     {
-        "date": 1753747200000,
+        "date": 1753772400000,
         "Flexible": 202,
         "Standard (Monthly)": 110,
         "Standard (Annual)": 350,
@@ -424,7 +416,7 @@
         "regular": 830
     },
     {
-        "date": 1753833600000,
+        "date": 1753858800000,
         "Flexible": 222,
         "Standard (Monthly)": 115,
         "Standard (Annual)": 350,
@@ -432,7 +424,7 @@
         "regular": 830
     },
     {
-        "date": 1753920000000,
+        "date": 1753945200000,
         "Flexible": 222,
         "Standard (Monthly)": 120,
         "Standard (Annual)": 385,
@@ -440,7 +432,7 @@
         "regular": 830
     },
     {
-        "date": 1754006400000,
+        "date": 1754031600000,
         "Flexible": 222,
         "Standard (Monthly)": 125,
         "Standard (Annual)": 420,
@@ -448,7 +440,7 @@
         "regular": 830
     },
     {
-        "date": 1754092800000,
+        "date": 1754118000000,
         "Flexible": 282,
         "Standard (Monthly)": 130,
         "Standard (Annual)": 490,
@@ -456,7 +448,7 @@
         "regular": 830
     },
     {
-        "date": 1754179200000,
+        "date": 1754204400000,
         "Flexible": 282,
         "Standard (Monthly)": 135,
         "Standard (Annual)": 490,
@@ -464,7 +456,7 @@
         "regular": 830
     },
     {
-        "date": 1754265600000,
+        "date": 1754290800000,
         "Flexible": 282,
         "Standard (Monthly)": 145,
         "Standard (Annual)": 595,
@@ -472,7 +464,7 @@
         "regular": 830
     },
     {
-        "date": 1754352000000,
+        "date": 1754377200000,
         "Flexible": 302,
         "Standard (Monthly)": 150,
         "Standard (Annual)": 630,
@@ -480,7 +472,7 @@
         "regular": 830
     },
     {
-        "date": 1754438400000,
+        "date": 1754463600000,
         "Flexible": 312,
         "Standard (Monthly)": 170,
         "Standard (Annual)": 665,
@@ -488,7 +480,7 @@
         "regular": 830
     },
     {
-        "date": 1754524800000,
+        "date": 1754550000000,
         "Flexible": 312,
         "Standard (Monthly)": 180,
         "Standard (Annual)": 735,

@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import cumPayments from "./cum_payments.json";
 import cumCounts from "./cum_counts.json";
+import today from "./today.json";
 import { useState } from "react";
 
 const TYPE_FILTER = [
@@ -53,34 +54,53 @@ const data = {
   "Cumulative Renewals": cumCounts,
 };
 
+const todayDate = new Date(today.today);
+
 export default function App() {
   const [selectedData, setSelectedData] = useState<keyof typeof data>(
-    "Cumulative Payments",
+    "Cumulative Payments"
   );
-
   const [stack, setStack] = useState<boolean>(true);
+
+  // Membership type selection state
+  const [selectedTypes, setSelectedTypes] = useState<
+    (typeof TYPE_FILTER)[number][]
+  >(TYPE_FILTER as unknown as (typeof TYPE_FILTER)[number][]);
+
+  // Handler for toggling membership type selection
+  const handleTypeToggle = (type: (typeof TYPE_FILTER)[number]) => {
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+  };
 
   return (
     <div className="main">
       <h1>Tool Library Memberships</h1>
+      <p>
+        <i>Data as of {todayDate.toLocaleString()}</i>
+      </p>
       <label>
         <input
           type="checkbox"
           checked={stack}
           onChange={() => setStack(!stack)}
         />
-        Stack
+        Stack Data
       </label>
+
+      <h4>Visualization</h4>
 
       <div
         style={{
           marginBottom: "1em",
           display: "flex",
-          flex: "row",
+          flexDirection: "row",
         }}
       >
         {Object.keys(data).map((key) => (
           <div
+            key={key}
             style={{
               marginRight: "1em",
             }}
@@ -93,10 +113,35 @@ export default function App() {
               checked={selectedData === key}
               onChange={() => setSelectedData(key as keyof typeof data)}
             />
-            <label for={key}>{key}</label>
+            <label htmlFor={key}>{key}</label>
           </div>
         ))}
       </div>
+
+      <h4>Visible Membership Types</h4>
+
+      {/* Membership type checkboxes */}
+      <div
+        style={{
+          marginBottom: "2em",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}
+      >
+        {TYPE_FILTER.map((type) => (
+          <div key={type} style={{ marginRight: "1em" }}>
+            <input
+              type="checkbox"
+              id={`type-${type}`}
+              checked={selectedTypes.includes(type)}
+              onChange={() => handleTypeToggle(type)}
+            />
+            <label htmlFor={`type-${type}`}>{type}</label>
+          </div>
+        ))}
+      </div>
+
       <div style={{ width: "100%", height: "400px" }}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
@@ -107,8 +152,11 @@ export default function App() {
               bottom: 0,
             }}
           >
-            {COLORS.map((color) => (
+            {COLORS.filter((color) =>
+              selectedTypes.includes(color.dataKey)
+            ).map((color) => (
               <Area
+                key={color.dataKey}
                 stroke={color.color}
                 fill={color.color}
                 dataKey={color.dataKey}
