@@ -178,11 +178,82 @@ export default function App() {
                 value: selectedData,
                 angle: -90,
                 position: "insideLeft",
-                offset: -5,
+                offset: -20,
+              }}
+              tickFormatter={(value) => {
+                // Format the value based on the selected data type
+                if (selectedData === "Cumulative Payments ($)") {
+                  return `$${value.toLocaleString()}`;
+                }
+                return value.toLocaleString();
               }}
             />
             <Legend />
-            <Tooltip />
+            <Tooltip
+              content={({ payload, label }) => {
+                if (!payload || payload.length === 0) return null;
+                const total = payload.reduce(
+                  (sum, entry) => sum + (entry.value ?? 0),
+                  0
+                );
+                return (
+                  <div
+                    style={{
+                      background: "white",
+                      border: "1px solid #ccc",
+                      padding: "8px",
+                    }}
+                  >
+                    <div>
+                      <strong>
+                        {typeof label === "string" || typeof label === "number"
+                          ? `Date ≤ ${new Date(label).toLocaleDateString()}`
+                          : label}
+                      </strong>
+                    </div>
+                    <table>
+                      <tbody>
+                        {payload.map((entry) => (
+                          <tr key={entry.dataKey}>
+                            <td>
+                              <span
+                                style={{
+                                  display: "inline-block",
+                                  width: 10,
+                                  height: 10,
+                                  background: entry.color,
+                                  marginRight: 6,
+                                }}
+                              />
+                              {entry.name}
+                            </td>
+                            <td style={{ textAlign: "right", paddingLeft: 12 }}>
+                              {selectedData === "Cumulative Payments ($)"
+                                ? `$${entry.value.toLocaleString()}`
+                                : entry.value.toLocaleString()}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    <hr />
+                    <div style={{ fontWeight: "bold", textAlign: "right" }}>
+                      Grand Total:{" "}
+                      {selectedData === "Cumulative Payments ($)"
+                        ? `$${total.toLocaleString()}`
+                        : total.toLocaleString()}
+                    </div>
+                  </div>
+                );
+              }}
+              formatter={(value, name) => {
+                // Format the value based on the selected data type
+                if (selectedData === "Cumulative Payments ($)") {
+                  return [`$${value.toLocaleString()}`, name];
+                }
+                return [value, name];
+              }}
+            />
           </AreaChart>
         </ResponsiveContainer>
       </div>
