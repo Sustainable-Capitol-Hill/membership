@@ -167,18 +167,30 @@ export default function App() {
             <CartesianGrid />
             <XAxis
               dataKey="date"
-              tickFormatter={(tick) => new Date(tick).toLocaleDateString()}
+              tickFormatter={(tick) => {
+                const d = new Date(tick);
+                // Show month/day only, omit year
+                return `${d.getMonth() + 1}/${d.getDate()}`;
+              }}
               type="number"
               scale="time"
-              interval="equidistantPreserveStart"
+              interval={1} // Show every other tick for brevity
               domain={["auto", "auto"]}
+              tick={{
+                fontSize: 14,
+                angle: -45,
+                textAnchor: "end", // changed from "middle" to "end"
+                dy: 5,
+              }}
+              height={70} // increased height for more space
             />
             <YAxis
               label={{
                 value: selectedData,
                 angle: -90,
                 position: "insideLeft",
-                offset: -20,
+                offset: -24,
+                style: { textAnchor: "middle" },
               }}
               tickFormatter={(value) => {
                 // Format the value based on the selected data type
