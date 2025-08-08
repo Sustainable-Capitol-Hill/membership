@@ -25,8 +25,18 @@ const TYPE_FILTER = [
 
 const host = "capitolhill.myturn.com";
 
-const FROM_DATE = "6/7/2025";
-const TO_DATE = "8/7/2025";
+const today = new Date();
+const sixtyDaysAgo = new Date(today.getTime() - 60 * 24 * 60 * 60 * 1000);
+
+const formatDate = (date: Date): string => {
+  const month = String(date.getMonth() + 1);
+  const day = String(date.getDate());
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+};
+
+const FROM_DATE = formatDate(sixtyDaysAgo);
+const TO_DATE = formatDate(today);
 
 const getLoginCookie = async () => {
   const myturnUsername = process.env["MYTURN_USERNAME"];
