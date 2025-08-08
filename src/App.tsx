@@ -178,10 +178,10 @@ export default function App() {
               domain={["auto", "auto"]}
               tick={{
                 fontSize: 14,
-                angle: -45,
                 textAnchor: "end", // changed from "middle" to "end"
                 dy: 5,
               }}
+              angle={-45}
               height={70} // increased height for more space
             />
             <YAxis
