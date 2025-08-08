@@ -1,7 +1,8 @@
-import csv from "csv-parser";
 import * as fs from "fs";
 import fetch from "node-fetch";
 import { parse } from "csv-parse/sync";
+
+import "dotenv/config";
 
 type Data = {
   Date: string;
@@ -41,6 +42,12 @@ const TO_DATE = formatDate(today);
 const getLoginCookie = async () => {
   const myturnUsername = process.env["MYTURN_USERNAME"];
   const myturnPassword = process.env["MYTURN_PASSWORD"];
+
+  if (!myturnUsername || !myturnPassword) {
+    throw new Error(
+      "MYTURN_USERNAME and MYTURN_PASSWORD environment variables must be set."
+    );
+  }
 
   const params = new URLSearchParams();
 
@@ -88,7 +95,7 @@ const getReport = async () => {
   const params = {
     method: "POST",
     headers: {
-      Cookie: cookie,
+      Cookie: cookie ?? "",
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: searchParams.toString(),
@@ -96,7 +103,7 @@ const getReport = async () => {
 
   const rsp = await fetch(
     `https://${host}/library/orgMembership/exportMembershipChangeReport`,
-    params,
+    params
   );
 
   return await rsp.text();
@@ -117,7 +124,7 @@ const generateReport = (records: Data[]) => {
   const cumCounts: Entry[] = [];
 
   const dates = [...new Set(records.map((entry) => entry["Date"]))].sort(
-    (a, b) => new Date(a).getTime() - new Date(b).getTime(),
+    (a, b) => new Date(a).getTime() - new Date(b).getTime()
   );
   for (const date of dates) {
     const dataForDate = records.filter((entry) => entry["Date"] === date);
@@ -177,7 +184,7 @@ const generateReport = (records: Data[]) => {
 
   fs.writeFileSync(
     "./src/cum_payments.json",
-    JSON.stringify(cumPayments, null, 4),
+    JSON.stringify(cumPayments, null, 4)
   );
 
   fs.writeFileSync("./src/cum_counts.json", JSON.stringify(cumCounts, null, 4));
