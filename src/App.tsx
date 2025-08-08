@@ -50,15 +50,15 @@ const COLORS: {
 ];
 
 const data = {
-  "Cumulative Payments": cumPayments.sort((a, b) => a.date - b.date),
-  "Cumulative Renewals": cumCounts,
+  "Cumulative Payments ($)": cumPayments.sort((a, b) => a.date - b.date),
+  "Cumulative Renewal Count": cumCounts,
 };
 
 const todayDate = new Date(today.today);
 
 export default function App() {
   const [selectedData, setSelectedData] = useState<keyof typeof data>(
-    "Cumulative Payments"
+    "Cumulative Payments ($)"
   );
   const [stack, setStack] = useState<boolean>(true);
 
