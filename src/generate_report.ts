@@ -1,8 +1,8 @@
+import "dotenv/config";
+
+import { parse } from "csv-parse/sync";
 import * as fs from "fs";
 import fetch from "node-fetch";
-import { parse } from "csv-parse/sync";
-
-import "dotenv/config";
 
 type Data = {
   Date: string;
@@ -30,7 +30,7 @@ const today = new Date();
 
 // Save today's date in a JSON file for reference
 fs.writeFileSync(
-  "./src/today.json",
+  "./src/generated/today.json",
   JSON.stringify({ today: today.toISOString() }, null, 4)
 );
 
@@ -190,11 +190,25 @@ const generateReport = (records: Data[]) => {
   }
 
   fs.writeFileSync(
-    "./src/cum_payments.json",
+    "./src/generated/cum_payments.json",
     JSON.stringify(cumPayments, null, 4)
   );
 
-  fs.writeFileSync("./src/cum_counts.json", JSON.stringify(cumCounts, null, 4));
+  fs.writeFileSync(
+    "./src/generated/cum_counts.json",
+    JSON.stringify(cumCounts, null, 4)
+  );
+
+  // Write non-cumulative payments and counts
+  fs.writeFileSync(
+    "./src/generated/payments.json",
+    JSON.stringify(payments, null, 4)
+  );
+
+  fs.writeFileSync(
+    "./src/generated/counts.json",
+    JSON.stringify(counts, null, 4)
+  );
 };
 
 generateReport(records);

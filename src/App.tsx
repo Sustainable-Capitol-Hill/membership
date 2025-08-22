@@ -1,19 +1,22 @@
 import "./App.css";
+
+import { useState } from "react";
 import {
-  AreaChart,
   Area,
-  XAxis,
-  YAxis,
+  AreaChart,
   CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
-  ReferenceLine,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from "recharts";
-import cumPayments from "./cum_payments.json";
-import cumCounts from "./cum_counts.json";
-import today from "./today.json";
-import { useState } from "react";
+
+import counts from "@/generated/counts.json";
+import cumCounts from "@/generated/cum_counts.json";
+import cumPayments from "@/generated/cum_payments.json";
+import payments from "@/generated/payments.json";
+import today from "@/generated/today.json";
 
 const TYPE_FILTER = [
   "Flexible",
@@ -49,9 +52,13 @@ const COLORS: {
   },
 ];
 
+cumPayments.sort((a, b) => a.date - b.date);
+
 const data = {
   "Cumulative Payments ($)": cumPayments.sort((a, b) => a.date - b.date),
-  "Cumulative Renewal Count": cumCounts,
+  "Cumulative Renewal Count": cumCounts.sort((a, b) => a.date - b.date),
+  "Payments ($)": payments.sort((a, b) => a.date - b.date),
+  Counts: counts.sort((a, b) => a.date - b.date),
 };
 
 const todayDate = new Date(today.today);
