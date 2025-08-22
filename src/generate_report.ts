@@ -28,6 +28,10 @@ const host = "capitolhill.myturn.com";
 
 const today = new Date();
 
+if (!fs.existsSync("./src/generated")) {
+  fs.mkdirSync("./src/generated", { recursive: true });
+}
+
 // Save today's date in a JSON file for reference
 fs.writeFileSync(
   "./src/generated/today.json",
