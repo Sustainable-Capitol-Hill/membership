@@ -3,6 +3,7 @@ import "dotenv/config";
 import { parse } from "csv-parse/sync";
 import * as fs from "fs";
 import fetch from "node-fetch";
+import { z } from "zod";
 
 type Data = {
   Date: string;
@@ -24,7 +25,14 @@ const TYPE_FILTER = [
   "regular",
 ];
 
-const host = "capitolhill.myturn.com";
+const settingsSchema = z.object({
+  MYTURN_USERNAME: z.string().min(2),
+  MYTURN_PASSWORD: z.string().min(2),
+  MYTURN_HOST: z.string().min(2).default("capitolhill.myturn.com"),
+  START_DAYS_AGO: z.string().transform(Number).default(60),
+});
+
+const settings = settingsSchema.parse(process.env);
 
 const today = new Date();
 
@@ -35,10 +43,12 @@ if (!fs.existsSync("./src/generated")) {
 // Save today's date in a JSON file for reference
 fs.writeFileSync(
   "./src/generated/today.json",
-  JSON.stringify({ today: today.toISOString() }, null, 4)
+  JSON.stringify({ today: today.toISOString() }, null, 4),
 );
 
-const sixtyDaysAgo = new Date(today.getTime() - 60 * 24 * 60 * 60 * 1000);
+const sixtyDaysAgo = new Date(
+  today.getTime() - 60 * 60 * 24 * settings.START_DAYS_AGO * 1000,
+);
 
 const formatDate = (date: Date): string => {
   const month = String(date.getMonth() + 1);
@@ -51,28 +61,25 @@ const FROM_DATE = formatDate(sixtyDaysAgo);
 const TO_DATE = formatDate(today);
 
 const getLoginCookie = async () => {
-  const myturnUsername = process.env["MYTURN_USERNAME"];
-  const myturnPassword = process.env["MYTURN_PASSWORD"];
-
-  if (!myturnUsername || !myturnPassword) {
-    throw new Error(
-      "MYTURN_USERNAME and MYTURN_PASSWORD environment variables must be set."
-    );
-  }
+  const myturnUsername = settings.MYTURN_USERNAME;
+  const myturnPassword = settings.MYTURN_PASSWORD;
 
   const params = new URLSearchParams();
 
   params.set("j_username", myturnUsername);
   params.set("j_password", myturnPassword);
 
-  const rsp = await fetch(`https://${host}/library/j_spring_security_check`, {
-    method: "POST",
-    redirect: "manual",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+  const rsp = await fetch(
+    `https://${settings.MYTURN_HOST}/library/j_spring_security_check`,
+    {
+      method: "POST",
+      redirect: "manual",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: params.toString(),
     },
-    body: params.toString(),
-  });
+  );
 
   const setCookieRsp = rsp.headers.get("set-cookie") ?? "";
 
@@ -113,8 +120,8 @@ const getReport = async () => {
   };
 
   const rsp = await fetch(
-    `https://${host}/library/orgMembership/exportMembershipChangeReport`,
-    params
+    `https://${settings.MYTURN_HOST}/library/orgMembership/exportMembershipChangeReport`,
+    params,
   );
 
   return await rsp.text();
@@ -135,7 +142,7 @@ const generateReport = (records: Data[]) => {
   const cumCounts: Entry[] = [];
 
   const dates = [...new Set(records.map((entry) => entry["Date"]))].sort(
-    (a, b) => new Date(a).getTime() - new Date(b).getTime()
+    (a, b) => new Date(a).getTime() - new Date(b).getTime(),
   );
   for (const date of dates) {
     const dataForDate = records.filter((entry) => entry["Date"] === date);
@@ -195,23 +202,23 @@ const generateReport = (records: Data[]) => {
 
   fs.writeFileSync(
     "./src/generated/cum_payments.json",
-    JSON.stringify(cumPayments, null, 4)
+    JSON.stringify(cumPayments, null, 4),
   );
 
   fs.writeFileSync(
     "./src/generated/cum_counts.json",
-    JSON.stringify(cumCounts, null, 4)
+    JSON.stringify(cumCounts, null, 4),
   );
 
   // Write non-cumulative payments and counts
   fs.writeFileSync(
     "./src/generated/payments.json",
-    JSON.stringify(payments, null, 4)
+    JSON.stringify(payments, null, 4),
   );
 
   fs.writeFileSync(
     "./src/generated/counts.json",
-    JSON.stringify(counts, null, 4)
+    JSON.stringify(counts, null, 4),
   );
 };
 
